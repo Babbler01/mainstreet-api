@@ -9,7 +9,6 @@ const serviceCategoryRoute = require('./serviceCategory.route'); // Import the s
 const reviewRoute = require('./review.route');
 const healthController = require('../../controllers/health.controller');
 const docsRoute = require('./docs.route');
-const config = require('../../config/config');
 
 const router = express.Router();
 
@@ -50,10 +49,6 @@ const defaultRoutes = [
     path: '/health',
     route: healthController.healthCheck,
   },
-];
-
-const devRoutes = [
-  // routes available only in development mode
   {
     path: '/docs',
     route: docsRoute,
@@ -63,12 +58,5 @@ const devRoutes = [
 defaultRoutes.forEach((route) => {
   router.use(route.path, route.route);
 });
-
-/* istanbul ignore next */
-if (config.env === 'development') {
-  devRoutes.forEach((route) => {
-    router.use(route.path, route.route);
-  });
-}
 
 module.exports = router;
