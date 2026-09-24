@@ -5,6 +5,7 @@ const createService = {
   body: Joi.object().keys({
     title: Joi.string().required(),
     description: Joi.string().required(),
+    image: Joi.string().uri(),
     price: Joi.number().required(),
     category: Joi.string().custom(objectId).required(),
   }),
@@ -34,6 +35,7 @@ const updateService = {
     .keys({
       title: Joi.string(),
       description: Joi.string(),
+      image: Joi.string().uri(),
       price: Joi.number(),
       category: Joi.string().custom(objectId),
     })

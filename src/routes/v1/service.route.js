@@ -52,13 +52,17 @@ module.exports = router;
  *                 type: number
  *               description:
  *                 type: string
+ *               image:
+ *                 type: string
+ *                 format: uri
  *               category:
  *                 type: string
  *             example:
- *               title: Classic Haircut
- *               price: 15
- *               description: A timeless haircut that suits all occasions, providing a clean and polished look.
- *               category: "7753"
+ *                 title: Classic Haircut
+ *                 price: 5000
+ *                 description: A timeless haircut that suits all occasions, providing a clean and polished look.
+ *                 image: https://example.com/images/classic-haircut.jpg
+ *                 category: "7753"
  *     responses:
  *       "201":
  *         description: Created
@@ -195,6 +199,9 @@ module.exports = router;
  *                 type: number
  *               description:
  *                 type: string
+ *               image:
+ *                 type: string
+ *                 format: uri
  *             example:
  *               title: Classic Haircut
  *               price: 20
