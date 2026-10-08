@@ -45,7 +45,6 @@ module.exports = router;
  *               - lastName
  *               - contactNumber
  *               - email
- *               - preferredHairdresser
  *               - serviceCategory
  *               - serviceType
  *               - appointmentDateTime
@@ -58,8 +57,6 @@ module.exports = router;
  *                 type: string
  *               email:
  *                 type: string
- *               preferredHairdresser:
- *                 type: string
  *               serviceCategory:
  *                 type: string
  *               serviceType:
@@ -68,8 +65,6 @@ module.exports = router;
  *                 type: string
  *                 format: date-time
  *               additionalNotes:
- *                 type: string
- *               userId:
  *                 type: string
  *               status:
  *                 type: string
@@ -106,11 +101,6 @@ module.exports = router;
  *       - bearerAuth: []
  *     parameters:
  *       - in: query
- *         name: preferredHairdresser
- *         schema:
- *           type: string
- *         description: ID of the preferred hairdresser
- *       - in: query
  *         name: serviceCategory
  *         schema:
  *           type: string
@@ -120,11 +110,6 @@ module.exports = router;
  *         schema:
  *           type: string
  *         description: ID of the service type
- *       - in: query
- *         name: userId
- *         schema:
- *           type: string
- *         description: ID of the user
  *       - in: query
  *         name: status
  *         schema:
@@ -185,8 +170,6 @@ module.exports = router;
  *     summary: Get an appointment
  *     description: Retrieve a specific appointment by its ID.
  *     tags: [Appointments]
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: appointmentId
@@ -234,8 +217,6 @@ module.exports = router;
  *                 type: string
  *               email:
  *                 type: string
- *               preferredHairdresser:
- *                 type: string
  *               serviceCategory:
  *                 type: string
  *               serviceType:
@@ -253,7 +234,6 @@ module.exports = router;
  *               lastName: Doe
  *               contactNumber: "0898888888"
  *               email: john.doe@example.com
- *               preferredHairdresser: "5596"
  *               serviceCategory: "7753"
  *               serviceType: "06e0"
  *               appointmentDateTime: "2024-08-21T12:00:07.199Z"
